@@ -18,7 +18,7 @@ export async function POST(request) {
     }
 
     const completion = await openai.chat.completions.create({
-      model: "deepseek/deepseek-r1-zero:free",
+      model: "mistralai/mistral-small-3.1-24b-instruct:free",
       messages,
     });
 
