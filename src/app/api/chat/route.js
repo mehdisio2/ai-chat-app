@@ -10,7 +10,7 @@ export async function POST(request) {
     const body = await request.json();
     const { messages } = body;
 
-    if (!messages || !Array.isArray(messages)) {
+    if (!messages || !Array.isArray(messages)) { // need to remove the second condition
       return new Response(
         JSON.stringify({ error: 'Invalid request body' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
@@ -18,7 +18,7 @@ export async function POST(request) {
     }
 
     const completion = await openai.chat.completions.create({
-      model: "mistralai/mistral-small-3.1-24b-instruct:free",
+      model: "google/gemma-3-27b-it:free",
       messages,
     });
 

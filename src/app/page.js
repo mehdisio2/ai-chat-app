@@ -23,7 +23,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ messages }),
+        body: JSON.stringify({ messages }), 
       });
 
       if (response.ok) {
